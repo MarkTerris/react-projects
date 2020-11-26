@@ -1,5 +1,5 @@
 import React, { useState } from 'react' 
-import { Button, ButtonGroup, Container, Badge } from 'react-bootstrap'
+import { Button, ButtonGroup, Badge, Container, Row } from 'react-bootstrap'
 
 
 export function Counter() {
@@ -17,17 +17,18 @@ export function Counter() {
 
     return (
       <Container>
-        <ButtonGroup>    
+        <Row className="justify-content-center">
+          <ButtonGroup>    
+            <Button onClick={decrement} variant="secondary" disabled={onZero}>-</Button>
 
-          <Button onClick={decrement} variant="secondary" size="lg" disabled={onZero}>-</Button>
+            <Button onClick={decrement} variant="secondary" disabled>
+              <Badge variant="light">{counter}</Badge>
+            </Button>
 
-          <Button onClick={decrement} variant="secondary" size="lg" disabled>
-            <Badge variant="light">{counter}</Badge>
-          </Button>
-
-          <Button onClick={increment} variant="secondary" size="lg">+</Button>
-
-        </ButtonGroup>
+            <Button onClick={increment} variant="secondary">+</Button>
+          </ButtonGroup>
+        </Row>
+        <hr />
       </Container>
     )
 }
