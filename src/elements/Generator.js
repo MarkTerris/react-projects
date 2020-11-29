@@ -6,6 +6,12 @@ function getRandomInt(min, max) {
     return Math.round(rand);
 }
 
+const styles = {
+    ButtonGroup: {
+        marginTop: '1rem'
+    }
+}
+
 export function RandIntGenerator() {
     const [min, setMin] = useState(1)
     const [max, setMax] = useState(10)
@@ -20,21 +26,23 @@ export function RandIntGenerator() {
         setRandInt(() => {
             return getRandomInt(min, max)
         })
-        console.log(min, max, randInt)
     }
 
     return (
         <Container>
             <Row className="justify-content-center">
-                <Form onSubmit={handleSubmit}>
-                    <Form.Label>Random number generator</Form.Label>
+                <h5>Random Number Generator</h5>
+            </Row>
+            
+            <Row className="justify-content-center">
+                <Form onSubmit={handleSubmit} className="justify-content-center">
                     <Form.Group>
                         <Form.Control defaultValue={min} type="number" placeholder="min" />
                         <Form.Control defaultValue={max} type="number" placeholder="max" style={{'marginTop': '1rem'}} />
                     </Form.Group>
 
-                    <ButtonGroup className="justify-content-center">
-                        <Button variant="secondary" type="submit">
+                    <ButtonGroup className="container-fluid" style={styles.ButtonGroup}>
+                        <Button variant="primary" type="submit">
                             Generate
                         </Button>
 

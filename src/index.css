@@ -2,8 +2,25 @@
 
 .container {
     margin-top: 1rem;
+    margin-bottom: 4rem;
 }
 
 .toast {
     margin-top: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+    color: #5a6268;
+}
+
+.form-group {
+    margin: 0!important;
+}
+
+.done-item {
+    text-decoration: line-through;
+}
+
+.nothing-todo {
+    color: #a0a6ab!important;
 }
